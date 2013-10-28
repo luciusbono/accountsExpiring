@@ -1,4 +1,5 @@
 ﻿param($numberofdays = 14, $path = [Environment]::GetFolderPath("Desktop")+'\'+'ExpiringBetween-'+(Get-Date -format M-d-yyyy)+'and'+(get-date).AddDays(14).ToString("M-d-yyyy")+'.csv')
+
 $numberofdays = $numberofdays | Out-String
 $($expiringUsers = Search-ADAccount -AccountExpiring -TimeSpan $numberofdays
 
